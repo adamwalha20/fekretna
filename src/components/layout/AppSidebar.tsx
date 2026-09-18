@@ -104,11 +104,20 @@ export function AppSidebar({ isAdmin = false }: AppSidebarProps) {
                 className={cn(
                   'h-4.5 w-4.5 transition-colors duration-200',
                   link.active
-                    ? 'text-cyan-600 dark:text-cyan-400'
+                    ? link.href === '/app/ideas'
+                      ? 'text-orange-500 dark:text-orange-400'
+                      : 'text-cyan-600 dark:text-cyan-400'
+                    : link.href === '/app/ideas'
+                    ? 'text-orange-400/80 group-hover:text-orange-500'
                     : 'text-slate-400 dark:text-slate-500 group-hover:text-cyan-600 dark:group-hover:text-slate-300'
                 )}
               />
-              <span>{link.label}</span>
+              <span className="flex-1">{link.label}</span>
+              {link.href === '/app/ideas' && (
+                <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-orange-50 text-orange-700 dark:bg-orange-950/70 dark:text-orange-300 border border-orange-200 dark:border-orange-500/30">
+                  Reels
+                </span>
+              )}
             </Link>
           );
         })}

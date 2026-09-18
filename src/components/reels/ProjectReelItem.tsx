@@ -257,10 +257,10 @@ export function ProjectReelItem({
               className="flex flex-col items-center group"
               aria-label={t('reels.giveAdvice')}
             >
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-950/60 border border-amber-500/40 text-amber-400 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-amber-500/20 backdrop-blur-md transition">
-                <Lightbulb className="h-5 w-5 fill-amber-400/20" />
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-orange-950/70 border border-orange-500/50 text-orange-400 group-hover:text-orange-300 group-hover:border-orange-400 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-orange-500/25 backdrop-blur-md transition">
+                <Lightbulb className="h-5 w-5 fill-orange-400/20" />
               </div>
-              <span className="text-[10px] font-semibold text-amber-300 mt-1 drop-shadow text-center max-w-[45px] leading-tight">
+              <span className="text-[10px] font-semibold text-orange-300 mt-1 drop-shadow text-center max-w-[45px] leading-tight">
                 {t('reels.giveAdvice') || 'Conseil'}
               </span>
             </button>
@@ -272,7 +272,7 @@ export function ProjectReelItem({
               className="flex flex-col items-center group"
               aria-label={t('reels.connect')}
             >
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-950/60 border border-cyan-500/40 text-cyan-400 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-cyan-500/20 backdrop-blur-md transition">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-950/70 border border-cyan-500/50 text-cyan-400 group-hover:text-cyan-300 group-hover:border-cyan-400 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-cyan-500/25 backdrop-blur-md transition">
                 <UserPlus className="h-5 w-5" />
               </div>
               <span className="text-[10px] font-semibold text-cyan-300 mt-1 drop-shadow text-center max-w-[45px] leading-tight">

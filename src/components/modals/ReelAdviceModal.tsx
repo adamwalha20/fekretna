@@ -61,19 +61,19 @@ export function ReelAdviceModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md animate-fade-in">
-      <div className="relative w-full max-w-lg rounded-3xl border border-amber-500/30 bg-white dark:bg-[#0c1222] p-6 sm:p-7 shadow-2xl shadow-amber-500/10 text-slate-900 dark:text-white space-y-5">
+      <div className="relative w-full max-w-lg rounded-3xl border border-orange-500/30 bg-white dark:bg-[#0c1222] p-6 sm:p-7 shadow-2xl shadow-orange-500/10 text-slate-900 dark:text-white space-y-5">
         {/* Header */}
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-400 text-slate-950 shadow-md shadow-amber-500/30">
-              <Lightbulb className="h-6 w-6 fill-slate-950 stroke-slate-950" />
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-tr from-orange-500 to-amber-500 text-white shadow-md shadow-orange-500/30">
+              <Lightbulb className="h-6 w-6 fill-white/20 stroke-white" />
             </div>
             <div>
               <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
                 {t('reels.adviceTitle') || 'Donner un conseil à'} {ownerName}
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                Projet : <span className="text-amber-700 dark:text-amber-300 font-semibold">{projectTitle}</span>
+                Projet : <span className="text-orange-700 dark:text-orange-300 font-semibold">{projectTitle}</span>
               </p>
             </div>
           </div>
@@ -87,7 +87,7 @@ export function ReelAdviceModal({
         </div>
 
         {/* Info banner */}
-        <p className="text-xs text-amber-900 dark:text-slate-300 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-500/20 rounded-2xl p-3 leading-relaxed">
+        <p className="text-xs text-orange-900 dark:text-slate-300 bg-orange-50 dark:bg-orange-950/40 border border-orange-200 dark:border-orange-500/20 rounded-2xl p-3 leading-relaxed">
           {t('reels.adviceSubtitle') ||
             'Partagez une idée bienveillante, une recommandation technique ou un retour d’expérience pour aider le projet à progresser.'}
         </p>
@@ -95,7 +95,7 @@ export function ReelAdviceModal({
         {/* Quick prompt suggestions */}
         <div className="space-y-1.5">
           <span className="text-[11px] font-semibold text-slate-600 dark:text-slate-400 flex items-center gap-1">
-            <Sparkles className="h-3 w-3 text-amber-600 dark:text-amber-400" />
+            <Sparkles className="h-3 w-3 text-orange-600 dark:text-orange-400" />
             Suggestions rapides :
           </span>
           <div className="flex flex-wrap gap-1.5">
@@ -104,7 +104,7 @@ export function ReelAdviceModal({
                 key={idx}
                 type="button"
                 onClick={() => handlePromptClick(qp)}
-                className="text-[11px] px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500/40 hover:text-amber-700 dark:hover:text-amber-300 transition"
+                className="text-[11px] px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-orange-500/40 hover:text-orange-700 dark:hover:text-orange-300 transition"
               >
                 {qp}
               </button>
@@ -127,7 +127,7 @@ export function ReelAdviceModal({
               value={advice}
               onChange={(e) => setAdvice(e.target.value)}
               placeholder={t('reels.advicePlaceholder') || 'Écrivez votre idée ou conseil bienveillant...'}
-              className="w-full rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#070b16] p-3.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 transition"
+              className="w-full rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#070b16] p-3.5 text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition"
             />
             <div className="flex justify-between items-center text-[10px] text-slate-500 mt-1">
               <span>Conseil visible par le créateur du projet</span>
@@ -146,7 +146,7 @@ export function ReelAdviceModal({
             <button
               type="submit"
               disabled={submitting || advice.trim().length < 5}
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-slate-950 bg-gradient-to-r from-amber-400 to-yellow-300 hover:from-amber-300 hover:to-yellow-200 rounded-xl shadow-md shadow-amber-500/20 transition disabled:opacity-50"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-400 hover:to-amber-400 rounded-xl shadow-md shadow-orange-500/20 transition disabled:opacity-50"
             >
               {submitting ? (
                 <>

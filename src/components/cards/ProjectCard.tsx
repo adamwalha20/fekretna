@@ -27,7 +27,7 @@ export function ProjectCard({
   const getStageColor = (stage: string) => {
     switch (stage) {
       case 'Idea':
-        return 'bg-blue-50 text-blue-800 border-blue-200 dark:bg-blue-950/60 dark:text-blue-300 dark:border-blue-500/30';
+        return 'bg-orange-50 text-orange-800 border-orange-200 dark:bg-orange-950/70 dark:text-orange-300 dark:border-orange-500/30';
       case 'Validation':
         return 'bg-purple-50 text-purple-800 border-purple-200 dark:bg-purple-950/60 dark:text-purple-300 dark:border-purple-500/30';
       case 'Prototype':

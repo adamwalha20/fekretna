@@ -470,6 +470,11 @@ export default function IdeasReelsPage() {
       {/* Discovery Top Bar Controls */}
       <div className="flex-none flex items-center justify-between gap-3 px-3 sm:px-6 py-2 border-b border-slate-200 dark:border-slate-800/80 bg-white/80 dark:bg-[#070b16]/70 backdrop-blur-md z-20">
         <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-orange-50 dark:bg-orange-950/60 border border-orange-200 dark:border-orange-500/30 text-orange-700 dark:text-orange-300 text-xs font-bold hidden sm:flex">
+            <Lightbulb className="h-3.5 w-3.5 text-orange-500 fill-orange-500/30" />
+            <span>{t('navigation.ideas') || 'Idées'}</span>
+          </div>
+
           <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800">
             <button
               type="button"

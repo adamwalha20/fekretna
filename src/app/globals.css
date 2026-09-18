@@ -3,6 +3,31 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+  /* ==========================================================================
+     FEKRETNA BRAND DESIGN SYSTEM TOKENS (INSPIRED BY THE FEKRETNA LOGO)
+     CYAN   = Connection, Action, Technology, Primary Interactive
+     ORANGE = Ideas, Creativity, Energy, Advice, Creative Accents
+     NAVY   = Deep, Modern, Clean Canvas and Surface
+     ========================================================================== */
+  --fekretna-cyan: #06b6d4;
+  --fekretna-cyan-hover: #0891b2;
+  --fekretna-cyan-soft: rgba(6, 182, 212, 0.12);
+  --fekretna-orange: #f97316;
+  --fekretna-orange-hover: #ea580c;
+  --fekretna-orange-soft: rgba(249, 115, 22, 0.12);
+  --fekretna-background: #070a13;
+  --fekretna-surface: #0c1322;
+  --fekretna-surface-elevated: #0f192e;
+  --fekretna-text-primary: #f8fafc;
+  --fekretna-text-secondary: #94a3b8;
+  --fekretna-text-muted: #64748b;
+  --fekretna-border: #1e293b;
+  --fekretna-focus: #06b6d4;
+  --fekretna-success: #10b981;
+  --fekretna-warning: #f59e0b;
+  --fekretna-error: #ef4444;
+
+  /* Standard Application CSS Variables */
   --background: #070a13;
   --foreground: #f8fafc;
   --card: #0d1527;
@@ -16,9 +41,19 @@
   --ring: #06b6d4;
   --accent-blue: #3b82f6;
   --accent-purple: #8b5cf6;
+  --accent-orange: #f97316;
 }
 
 @theme inline {
+  --color-fekretna-cyan: var(--fekretna-cyan);
+  --color-fekretna-cyan-hover: var(--fekretna-cyan-hover);
+  --color-fekretna-cyan-soft: var(--fekretna-cyan-soft);
+  --color-fekretna-orange: var(--fekretna-orange);
+  --color-fekretna-orange-hover: var(--fekretna-orange-hover);
+  --color-fekretna-orange-soft: var(--fekretna-orange-soft);
+  --color-fekretna-bg: var(--fekretna-background);
+  --color-fekretna-surface: var(--fekretna-surface);
+  --color-fekretna-surface-elevated: var(--fekretna-surface-elevated);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -32,6 +67,7 @@
   --color-ring: var(--ring);
   --color-accent-blue: var(--accent-blue);
   --color-accent-purple: var(--accent-purple);
+  --color-accent-orange: var(--accent-orange);
   --font-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-arabic: var(--font-arabic), "Segoe UI", Tahoma, sans-serif;
 }
@@ -160,22 +196,134 @@ body {
 }
 
 /* ==========================================================================
+   FEKRETNA BUTTONS & CARD UTILITIES (BRAND IDENTITY SYSTEM)
+   ========================================================================== */
+.btn-fekretna-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.625rem 1.125rem;
+  border-radius: 0.875rem;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 50%, #0284c7 100%);
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  box-shadow: 0 4px 14px -2px rgba(6, 182, 212, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  user-select: none;
+}
+.btn-fekretna-primary:hover {
+  background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 50%, #0284c7 100%);
+  box-shadow: 0 6px 20px -2px rgba(6, 182, 212, 0.5), 0 0 12px 0 rgba(34, 211, 238, 0.4);
+  transform: translateY(-1px);
+}
+.btn-fekretna-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px -1px rgba(6, 182, 212, 0.3);
+}
+.btn-fekretna-primary:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 2px;
+}
+.btn-fekretna-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-fekretna-orange {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.625rem 1.125rem;
+  border-radius: 0.875rem;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 60%, #c2410c 100%);
+  border: 1px solid rgba(251, 146, 60, 0.4);
+  box-shadow: 0 4px 14px -2px rgba(249, 115, 22, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  user-select: none;
+}
+.btn-fekretna-orange:hover {
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 60%, #ea580c 100%);
+  box-shadow: 0 6px 20px -2px rgba(249, 115, 22, 0.5), 0 0 12px 0 rgba(251, 146, 60, 0.4);
+  transform: translateY(-1px);
+}
+.btn-fekretna-orange:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px -1px rgba(249, 115, 22, 0.3);
+}
+.btn-fekretna-orange:focus-visible {
+  outline: 2px solid #fb923c;
+  outline-offset: 2px;
+}
+.btn-fekretna-orange:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.card-fekretna {
+  border-radius: 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  background-color: var(--fekretna-surface);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-fekretna:hover {
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 16px 36px -12px rgba(6, 182, 212, 0.18), 0 0 1px 1px rgba(6, 182, 212, 0.25);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
    LIGHT (WHITE) MODE ADAPTATION — CRISP, HIGH-CONTRAST, MODERN
    ========================================================================== */
 html.light {
+  /* Fekretna Light Mode Brand Tokens */
+  --fekretna-cyan: #0891b2;
+  --fekretna-cyan-hover: #0e7490;
+  --fekretna-cyan-soft: rgba(8, 145, 178, 0.08);
+  --fekretna-orange: #ea580c;
+  --fekretna-orange-hover: #c2410c;
+  --fekretna-orange-soft: rgba(234, 88, 12, 0.08);
+  --fekretna-background: #f8fafc;
+  --fekretna-surface: #ffffff;
+  --fekretna-surface-elevated: #f1f5f9;
+  --fekretna-text-primary: #0f172a;
+  --fekretna-text-secondary: #475569;
+  --fekretna-text-muted: #94a3b8;
+  --fekretna-border: #e2e8f0;
+  --fekretna-focus: #0891b2;
+  --fekretna-success: #059669;
+  --fekretna-warning: #d97706;
+  --fekretna-error: #dc2626;
+
+  /* Standard Base CSS Variables */
   --background: #f8fafc;
   --foreground: #0f172a;
   --card: #ffffff;
   --card-foreground: #0f172a;
-  --primary: #0284c7;
-  --primary-hover: #0369a1;
+  --primary: #0891b2;
+  --primary-hover: #0e7490;
   --primary-foreground: #ffffff;
   --muted: #f1f5f9;
   --muted-foreground: #64748b;
   --border: #e2e8f0;
-  --ring: #0284c7;
+  --ring: #0891b2;
   --accent-blue: #2563eb;
   --accent-purple: #7c3aed;
+  --accent-orange: #ea580c;
   color-scheme: light;
 }
 

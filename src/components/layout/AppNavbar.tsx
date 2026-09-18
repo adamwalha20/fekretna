@@ -78,7 +78,7 @@ export function AppNavbar({
         >
           <Bell className="h-5 w-5" />
           {unreadNotifications > 0 && (
-            <span className="absolute top-1.5 right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-cyan-500 text-[10px] font-bold text-slate-950 shadow-sm shadow-cyan-500/50 animate-pulse">
+            <span className="absolute top-1.5 right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-orange-500 dark:bg-orange-500 text-[10px] font-bold text-white shadow-sm shadow-orange-500/50 animate-pulse">
               {unreadNotifications > 9 ? '9+' : unreadNotifications}
             </span>
           )}
