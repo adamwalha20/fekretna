@@ -175,16 +175,16 @@ export function DashboardClientView({
 
       {/* QUICK STATS CARDS */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="rounded-2xl bg-[#0c1322]/80 border border-slate-800/80 p-5 shadow-lg relative overflow-hidden">
+        <div className="rounded-2xl bg-white dark:bg-[#0c1322]/80 border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm dark:shadow-lg relative overflow-hidden">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+            <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
               {t('connections.activeConnections') || 'Connexions'}
             </span>
-            <div className="p-2 rounded-xl bg-cyan-950/60 text-cyan-400 border border-cyan-500/30">
+            <div className="p-2 rounded-xl bg-cyan-50 dark:bg-cyan-950/60 text-cyan-600 dark:text-cyan-400 border border-cyan-200 dark:border-cyan-500/30">
               <UserCheck className="h-4 w-4" />
             </div>
           </div>
-          <p className="text-2xl sm:text-3xl font-mono font-extrabold text-white">
+          <p className="text-2xl sm:text-3xl font-mono font-extrabold text-slate-900 dark:text-white">
             {activeConnectionsCount}
           </p>
           <p className="text-[11px] text-slate-500 mt-1">
@@ -192,16 +192,16 @@ export function DashboardClientView({
           </p>
         </div>
 
-        <div className="rounded-2xl bg-[#0c1322]/80 border border-slate-800/80 p-5 shadow-lg relative overflow-hidden">
+        <div className="rounded-2xl bg-white dark:bg-[#0c1322]/80 border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm dark:shadow-lg relative overflow-hidden">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+            <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
               {t('connections.pendingRequests') || 'Demandes'}
             </span>
-            <div className="p-2 rounded-xl bg-amber-950/60 text-amber-400 border border-amber-500/30">
+            <div className="p-2 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-500/30">
               <Clock className="h-4 w-4" />
             </div>
           </div>
-          <p className="text-2xl sm:text-3xl font-mono font-extrabold text-white">
+          <p className="text-2xl sm:text-3xl font-mono font-extrabold text-slate-900 dark:text-white">
             {pendingRequests.length}
           </p>
           <p className="text-[11px] text-slate-500 mt-1">
@@ -209,16 +209,16 @@ export function DashboardClientView({
           </p>
         </div>
 
-        <div className="rounded-2xl bg-[#0c1322]/80 border border-slate-800/80 p-5 shadow-lg relative overflow-hidden">
+        <div className="rounded-2xl bg-white dark:bg-[#0c1322]/80 border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm dark:shadow-lg relative overflow-hidden">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+            <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
               {t('dashboard.myProjects') || 'Mes projets'}
             </span>
-            <div className="p-2 rounded-xl bg-indigo-950/60 text-indigo-400 border border-indigo-500/30">
+            <div className="p-2 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-500/30">
               <FolderGit2 className="h-4 w-4" />
             </div>
           </div>
-          <p className="text-2xl sm:text-3xl font-mono font-extrabold text-white">
+          <p className="text-2xl sm:text-3xl font-mono font-extrabold text-slate-900 dark:text-white">
             {myProjects.length}
           </p>
           <p className="text-[11px] text-slate-500 mt-1">
@@ -226,16 +226,16 @@ export function DashboardClientView({
           </p>
         </div>
 
-        <div className="rounded-2xl bg-[#0c1322]/80 border border-slate-800/80 p-5 shadow-lg relative overflow-hidden">
+        <div className="rounded-2xl bg-white dark:bg-[#0c1322]/80 border border-slate-200 dark:border-slate-800/80 p-5 shadow-sm dark:shadow-lg relative overflow-hidden">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+            <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
               {t('dashboard.networkProjects') || 'Écosystème'}
             </span>
-            <div className="p-2 rounded-xl bg-emerald-950/60 text-emerald-400 border border-emerald-500/30">
+            <div className="p-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/30">
               <Sparkles className="h-4 w-4" />
             </div>
           </div>
-          <p className="text-2xl sm:text-3xl font-mono font-extrabold text-white">
+          <p className="text-2xl sm:text-3xl font-mono font-extrabold text-slate-900 dark:text-white">
             {publicProjects.length}
           </p>
           <p className="text-[11px] text-slate-500 mt-1">
@@ -249,14 +249,14 @@ export function DashboardClientView({
         <section className="space-y-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="h-3 w-3 rounded-full bg-amber-400 animate-ping" />
-              <h2 className="text-lg font-bold text-white">
+              <div className="h-3 w-3 rounded-full bg-amber-500 animate-ping" />
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white">
                 {t('connections.receivedRequests') || 'Demandes de connexion en attente'} ({pendingRequests.length})
               </h2>
             </div>
             <Link
               href="/app/connections"
-              className="text-xs font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1"
+              className="text-xs font-semibold text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 flex items-center gap-1"
             >
               {t('common.viewAll') || 'Gérer'}
               <ArrowRight className="h-3.5 w-3.5 rtl-flip" />
@@ -267,7 +267,7 @@ export function DashboardClientView({
             {pendingRequests.map((req) => (
               <div
                 key={req.id}
-                className="rounded-2xl border border-slate-800/90 bg-[#0d1527]/90 p-5 shadow-xl flex flex-col justify-between gap-4 backdrop-blur-xl"
+                className="rounded-2xl border border-slate-200 dark:border-slate-800/90 bg-white dark:bg-[#0d1527]/90 p-5 shadow-md dark:shadow-xl flex flex-col justify-between gap-4 backdrop-blur-xl"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3">
@@ -286,11 +286,11 @@ export function DashboardClientView({
                     <div>
                       <Link
                         href={`/app/profile/${req.sender_id}`}
-                        className="text-sm font-bold text-white hover:text-cyan-300 transition"
+                        className="text-sm font-bold text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-300 transition"
                       >
                         {req.sender?.display_name}
                       </Link>
-                      <p className="text-xs text-slate-400">
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
                         {req.sender?.city} • {req.sender?.university || 'Étudiant / Entrepreneur'}
                       </p>
                     </div>
@@ -299,7 +299,7 @@ export function DashboardClientView({
                   <div className="flex items-center gap-1.5">
                     <button
                       onClick={() => handleRejectRequest(req.id)}
-                      className="p-2 rounded-xl text-slate-400 hover:text-rose-400 hover:bg-rose-950/40 transition"
+                      className="p-2 rounded-xl text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition"
                       title={t('connections.reject') || 'Refuser'}
                     >
                       <X className="h-4 w-4" />
@@ -317,7 +317,7 @@ export function DashboardClientView({
                 </div>
 
                 {req.message && (
-                  <div className="rounded-xl bg-[#080e1e] p-3 text-xs text-slate-300 border border-slate-800 italic">
+                  <div className="rounded-xl bg-slate-50 dark:bg-[#080e1e] p-3 text-xs text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 italic">
                     &ldquo;{req.message}&rdquo;
                   </div>
                 )}
@@ -331,17 +331,17 @@ export function DashboardClientView({
       <section className="space-y-4">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-lg sm:text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
-              <Sparkles className="h-5 w-5 text-cyan-400" />
+            <h2 className="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
+              <Sparkles className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
               <span>{t('dashboard.peopleToMeet') || 'Personnes que vous pourriez souhaiter rencontrer'}</span>
             </h2>
-            <p className="text-xs text-slate-400 mt-0.5">
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
               {t('dashboard.peopleToMeetSub') || 'Calculé par complémentarité de compétences, intérêts communs et proximité'}
             </p>
           </div>
           <Link
             href="/app/discover"
-            className="text-xs font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1"
+            className="text-xs font-semibold text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 flex items-center gap-1"
           >
             {t('common.viewAll') || 'Explorer'}
             <ArrowRight className="h-3.5 w-3.5 rtl-flip" />
@@ -374,17 +374,17 @@ export function DashboardClientView({
       <section className="space-y-4">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-lg sm:text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
-              <Compass className="h-5 w-5 text-indigo-400" />
+            <h2 className="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
+              <Compass className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
               <span>{t('dashboard.matchingProjects') || 'Projets correspondant à vos compétences'}</span>
             </h2>
-            <p className="text-xs text-slate-400 mt-0.5">
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
               {t('dashboard.matchingProjectsSub') || 'Des fondateurs recherchent des profils comme le vôtre'}
             </p>
           </div>
           <Link
             href="/explore"
-            className="text-xs font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1"
+            className="text-xs font-semibold text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 flex items-center gap-1"
           >
             {t('common.viewAll') || 'Tous les projets'}
             <ArrowRight className="h-3.5 w-3.5 rtl-flip" />
@@ -412,17 +412,17 @@ export function DashboardClientView({
       <section className="space-y-4">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-lg sm:text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
-              <FolderGit2 className="h-5 w-5 text-teal-400" />
+            <h2 className="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
+              <FolderGit2 className="h-5 w-5 text-teal-600 dark:text-teal-400" />
               <span>{t('dashboard.myProjects') || 'Vos projets'}</span>
             </h2>
-            <p className="text-xs text-slate-400 mt-0.5">
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
               {t('dashboard.myProjectsSub') || 'Gérez vos idées et les candidatures reçues'}
             </p>
           </div>
           <Link
             href="/app/projects/new"
-            className="inline-flex items-center gap-1 text-xs font-semibold text-cyan-400 hover:text-cyan-300"
+            className="inline-flex items-center gap-1 text-xs font-semibold text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300"
           >
             <Plus className="h-3.5 w-3.5" />
             <span>{t('projects.createProject') || 'Nouveau projet'}</span>

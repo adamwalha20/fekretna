@@ -214,59 +214,88 @@ html.light .bg-grid-cyber {
     linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
 }
 
-/* Light mode dark surface rewrites */
-html.light .bg-\[\#070a13\],
-html.light .bg-\[\#070a14\],
-html.light .bg-\[\#050811\],
-html.light .bg-\[\#070b16\] {
+/* Light mode dark surface rewrites — using wildcard attribute selectors to handle opacity variants */
+html.light [class*="bg-[#070a13]"],
+html.light [class*="bg-[#070a14]"],
+html.light [class*="bg-[#050810]"],
+html.light [class*="bg-[#050811]"],
+html.light [class*="bg-[#070b16]"] {
   background-color: #f8fafc !important;
 }
 
-html.light .bg-\[\#080d1a\],
-html.light .bg-\[\#080d19\],
-html.light .bg-\[\#0c1322\],
-html.light .bg-\[\#0d172e\],
-html.light .bg-\[\#0d1527\],
-html.light .bg-\[\#080e1e\],
-html.light .bg-\[\#091020\],
-html.light .bg-\[\#0b1426\],
-html.light .bg-\[\#090e1c\],
-html.light .bg-\[\#0c1222\],
-html.light .bg-\[\#0b101e\] {
+html.light [class*="bg-[#080d1a]"]:not(.reel-card):not(.reel-card *),
+html.light [class*="bg-[#080d19]"]:not(.reel-card):not(.reel-card *),
+html.light [class*="bg-[#0c1322]"]:not(.reel-card):not(.reel-card *),
+html.light [class*="bg-[#0d172e]"]:not(.reel-card):not(.reel-card *),
+html.light [class*="bg-[#0d1527]"]:not(.reel-card):not(.reel-card *),
+html.light [class*="bg-[#080e1e]"]:not(.reel-card):not(.reel-card *),
+html.light [class*="bg-[#091020]"]:not(.reel-card):not(.reel-card *),
+html.light [class*="bg-[#0b1426]"]:not(.reel-card):not(.reel-card *),
+html.light [class*="bg-[#090e1c]"]:not(.reel-card):not(.reel-card *),
+html.light [class*="bg-[#0c1222]"]:not(.reel-card):not(.reel-card *),
+html.light [class*="bg-[#0b101e]"]:not(.reel-card):not(.reel-card *),
+html.light [class*="bg-[#0b1120]"]:not(.reel-card):not(.reel-card *),
+html.light [class*="bg-[#0a1120]"]:not(.reel-card):not(.reel-card *),
+html.light [class*="bg-slate-900"]:not(.reel-card):not(.reel-card *):not(button):not(a):not(.keep-dark),
+html.light [class*="bg-slate-950"]:not(.reel-card):not(.reel-card *):not(button):not(a):not(.keep-dark) {
   background-color: #ffffff !important;
 }
 
-html.light .bg-slate-900,
-html.light .bg-slate-900\/95,
-html.light .bg-slate-900\/90,
-html.light .bg-slate-900\/80,
-html.light .bg-slate-900\/70,
-html.light .bg-slate-900\/60,
-html.light .bg-slate-950,
-html.light .bg-slate-950\/90,
-html.light .bg-slate-950\/80,
-html.light .bg-slate-950\/70,
-html.light .bg-slate-950\/60,
-html.light .bg-slate-950\/40 {
-  background-color: #ffffff !important;
+/* Secondary inner wells in light mode */
+html.light [class*="bg-slate-800"]:not(button):not(a):not(.keep-dark):not(.reel-card):not(.reel-card *) {
+  background-color: #f1f5f9 !important;
 }
 
 /* Base text color in light mode */
-html.light .text-white {
+html.light .text-white:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *),
+html.light [class*="text-white"]:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *) {
   color: #0f172a !important;
 }
 
-html.light .text-slate-100,
-html.light .text-slate-200 {
+html.light .text-slate-100:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *),
+html.light [class*="text-slate-100"]:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *),
+html.light .text-slate-200:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *),
+html.light [class*="text-slate-200"]:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *) {
   color: #1e293b !important;
 }
 
-html.light .text-slate-300 {
+html.light .text-slate-300:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *),
+html.light [class*="text-slate-300"]:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *) {
   color: #334155 !important;
 }
 
-html.light .text-slate-400 {
+html.light .text-slate-400:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *),
+html.light [class*="text-slate-400"]:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *) {
   color: #64748b !important;
+}
+
+/* High-contrast saturated highlight accents for white mode */
+html.light [class*="text-cyan-400"]:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *),
+html.light [class*="text-cyan-300"]:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *) {
+  color: #0891b2 !important;
+}
+html.light [class*="text-cyan-200"]:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *) {
+  color: #0e7490 !important;
+}
+html.light [class*="text-amber-400"]:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *),
+html.light [class*="text-amber-300"]:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *) {
+  color: #b45309 !important;
+}
+html.light [class*="text-emerald-400"]:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *),
+html.light [class*="text-emerald-300"]:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *) {
+  color: #047857 !important;
+}
+html.light [class*="text-purple-400"]:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *),
+html.light [class*="text-purple-300"]:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *) {
+  color: #7e22ce !important;
+}
+html.light [class*="text-indigo-400"]:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *),
+html.light [class*="text-indigo-300"]:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *) {
+  color: #4338ca !important;
+}
+html.light [class*="text-rose-400"]:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *),
+html.light [class*="text-rose-300"]:not(.keep-white):not(button):not(a):not(.reel-card):not(.reel-card *) {
+  color: #be123c !important;
 }
 
 /* Ensure text-transparent gradients work in light mode */
@@ -282,20 +311,18 @@ html.light button[class*="from-"],
 html.light button[class*="from-"] *,
 html.light a[class*="from-"],
 html.light a[class*="from-"] *,
-html.light button.bg-cyan-500,
-html.light button.bg-cyan-500 *,
-html.light a.bg-cyan-500,
-html.light a.bg-cyan-500 *,
-html.light button.bg-cyan-600,
-html.light button.bg-cyan-600 *,
-html.light a.bg-cyan-600,
-html.light a.bg-cyan-600 *,
-html.light button.bg-indigo-600,
-html.light button.bg-indigo-600 *,
-html.light a.bg-indigo-600,
-html.light a.bg-indigo-600 *,
-html.light button.bg-teal-600,
-html.light button.bg-teal-600 *,
+html.light button[class*="bg-cyan"],
+html.light button[class*="bg-cyan"] *,
+html.light a[class*="bg-cyan"],
+html.light a[class*="bg-cyan"] *,
+html.light button[class*="bg-indigo"],
+html.light button[class*="bg-indigo"] *,
+html.light a[class*="bg-indigo"],
+html.light a[class*="bg-indigo"] *,
+html.light button[class*="bg-teal"],
+html.light button[class*="bg-teal"] *,
+html.light a[class*="bg-teal"],
+html.light a[class*="bg-teal"] *,
 html.light button[type="submit"]:not(.bg-white):not([class*="bg-slate"]),
 html.light button[type="submit"]:not(.bg-white):not([class*="bg-slate"]) *,
 html.light .keep-white,
@@ -345,21 +372,13 @@ html.light [class*="bg-emerald-950"] {
 }
 
 /* Clean Borders in Light Mode */
-html.light .border-slate-800,
-html.light .border-slate-800\/90,
-html.light .border-slate-800\/80,
-html.light .border-slate-800\/60,
-html.light .border-slate-800\/50,
-html.light .border-slate-800\/40,
-html.light .border-slate-700,
-html.light .border-slate-700\/80,
-html.light .border-slate-700\/70,
-html.light .border-slate-700\/60 {
+html.light [class*="border-slate-800"]:not(.reel-card):not(.reel-card *),
+html.light [class*="border-slate-700"]:not(.reel-card):not(.reel-card *) {
   border-color: #e2e8f0 !important;
 }
 
 /* Inputs, Textareas, Selects */
-html.light input,
+html.light input:not([type="checkbox"]):not([type="radio"]),
 html.light textarea,
 html.light select {
   background-color: #ffffff !important;

@@ -188,21 +188,21 @@ export function ReelsCommentsPanel({
       />
 
       {/* Drawer / Bottom Sheet Container */}
-      <div className="w-full md:w-[420px] max-h-[85vh] md:h-[88vh] flex flex-col rounded-t-3xl md:rounded-3xl border border-slate-800/90 bg-[#0b101e] shadow-2xl shadow-cyan-950/30 md:m-4 text-white overflow-hidden animate-slide-up">
+      <div className="w-full md:w-[420px] max-h-[85vh] md:h-[88vh] flex flex-col rounded-t-3xl md:rounded-3xl border border-slate-200 dark:border-slate-800/90 bg-white dark:bg-[#0b101e] shadow-2xl shadow-slate-900/10 dark:shadow-cyan-950/30 md:m-4 text-slate-900 dark:text-white overflow-hidden animate-slide-up">
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-slate-800/80 px-5 py-4 bg-[#080d19]/80 backdrop-blur-md">
+        <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800/80 px-5 py-4 bg-slate-50/90 dark:bg-[#080d19]/80 backdrop-blur-md">
           <div className="flex items-center gap-2.5">
-            <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-cyan-950 border border-cyan-500/30 text-cyan-400">
+            <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-cyan-50 dark:bg-cyan-950 border border-cyan-200 dark:border-cyan-500/30 text-cyan-600 dark:text-cyan-400">
               <MessageSquare className="h-4 w-4" />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-white flex items-center gap-2">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <span>{t('reels.comments') || 'Commentaires'}</span>
-                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-800 text-cyan-300">
+                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-cyan-700 dark:text-cyan-300">
                   {comments.length}
                 </span>
               </h3>
-              <p className="text-[11px] text-slate-400 truncate max-w-[220px]">
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 truncate max-w-[220px]">
                 {projectTitle}
               </p>
             </div>
@@ -210,7 +210,7 @@ export function ReelsCommentsPanel({
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/80 transition"
+            className="p-1.5 rounded-xl text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/80 transition"
           >
             <X className="h-5 w-5" />
           </button>
@@ -308,9 +308,9 @@ export function ReelsCommentsPanel({
         </div>
 
         {/* Comment Input Footer */}
-        <form onSubmit={handlePostComment} className="border-t border-slate-800/90 p-3 bg-[#080d19]/90">
+        <form onSubmit={handlePostComment} className="border-t border-slate-200 dark:border-slate-800/90 p-3 bg-slate-50/90 dark:bg-[#080d19]/90">
           {error && (
-            <div className="text-[11px] text-rose-300 bg-rose-950/60 p-2 rounded-xl mb-2 border border-rose-500/30">
+            <div className="text-[11px] text-rose-700 dark:text-rose-300 bg-rose-50 dark:bg-rose-950/60 p-2 rounded-xl mb-2 border border-rose-200 dark:border-rose-500/30">
               {error}
             </div>
           )}
@@ -322,12 +322,12 @@ export function ReelsCommentsPanel({
               onChange={(e) => setNewCommentText(e.target.value)}
               placeholder={t('reels.commentPlaceholder') || 'Partagez une idée ou un retour constructif...'}
               maxLength={400}
-              className="flex-1 rounded-2xl border border-slate-800 bg-[#050811] px-4 py-2.5 text-xs text-slate-100 placeholder-slate-500 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition"
+              className="flex-1 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050811] px-4 py-2.5 text-xs text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition"
             />
             <button
               type="submit"
               disabled={submitting || !newCommentText.trim()}
-              className="inline-flex items-center justify-center h-9 w-9 rounded-2xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 transition disabled:opacity-40 shrink-0 shadow-md shadow-cyan-500/20"
+              className="inline-flex items-center justify-center h-9 w-9 rounded-2xl bg-cyan-600 hover:bg-cyan-500 dark:bg-cyan-500 dark:hover:bg-cyan-400 text-white dark:text-slate-950 transition disabled:opacity-40 shrink-0 shadow-md shadow-cyan-500/20"
             >
               {submitting ? (
                 <Loader2 className="h-4 w-4 animate-spin" />
