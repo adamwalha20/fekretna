@@ -18,10 +18,9 @@ import {
   Sparkles,
   Users,
   MessageSquare,
-  Lock,
 } from 'lucide-react';
 import { Project, Skill, ProjectRole } from '@/types/database';
-import { Navbar } from '@/components/layout/Navbar';
+import { LandingNavbar } from '@/components/landing/LandingNavbar';
 import { Footer } from '@/components/layout/Footer';
 import { ProjectCard } from '@/components/cards/ProjectCard';
 import { EmptyState } from '@/components/ui/EmptyState';
@@ -33,7 +32,7 @@ interface LandingClientViewProps {
 }
 
 export function LandingClientView({ featuredProjects }: LandingClientViewProps) {
-  const { t, isRtl } = useI18n();
+  const { t } = useI18n();
 
   const categories = [
     { name: t('landing.catTech') || 'Technologie & IA', icon: Cpu, desc: 'Web, Mobile, IA, IoT, Cloud' },
@@ -75,38 +74,39 @@ export function LandingClientView({ featuredProjects }: LandingClientViewProps) 
 
   return (
     <div className="flex min-h-screen flex-col bg-slate-50 dark:bg-[#070a13] text-slate-900 dark:text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-800 dark:selection:text-cyan-200">
-      <Navbar />
+      <LandingNavbar />
 
       <main className="flex-1">
         {/* HERO SECTION */}
-        <section className="relative overflow-hidden py-16 sm:py-24 lg:py-32 border-b border-slate-200 dark:border-slate-800/80">
-          {/* Cyber Ambient lights */}
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[45rem] h-[25rem] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none -z-10" />
-          <div className="absolute top-1/3 left-10 w-96 h-96 bg-indigo-600/10 rounded-full blur-[130px] pointer-events-none -z-10" />
+        <section className="relative overflow-hidden pt-10 pb-16 sm:py-24 lg:py-28 border-b border-slate-200 dark:border-slate-800/80">
+          {/* Cyber Ambient lights & mesh backdrop */}
+          <div className="absolute inset-0 bg-grid-cyber opacity-[0.03] dark:opacity-[0.05] pointer-events-none -z-10" />
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[30rem] bg-gradient-to-tr from-cyan-500/10 via-indigo-600/10 to-teal-400/5 rounded-full blur-[150px] pointer-events-none -z-10" />
+          <div className="absolute top-1/3 left-6 sm:left-12 w-80 sm:w-96 h-80 sm:h-96 bg-indigo-600/10 dark:bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none -z-10" />
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
               {/* Left Column: Headlines and Call to Actions */}
               <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
                 {/* Initiative Badge */}
-                <div className="inline-flex items-center gap-2 rounded-full bg-cyan-100/80 dark:bg-cyan-950/70 px-4 py-1.5 text-xs font-semibold text-cyan-800 dark:text-cyan-300 border border-cyan-300 dark:border-cyan-500/30 shadow-xs dark:shadow-lg dark:shadow-cyan-500/10">
+                <div className="inline-flex items-center gap-2 rounded-full bg-cyan-50/90 dark:bg-cyan-950/70 px-4 py-1.5 text-xs font-semibold text-cyan-800 dark:text-cyan-300 border border-cyan-200/90 dark:border-cyan-500/30 shadow-xs dark:shadow-lg dark:shadow-cyan-500/10 hover:border-cyan-400/60 transition-all duration-300">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500" />
                   </span>
                   <span className="font-arabic text-sm font-bold">من فكرة لفريق</span>
-                  <span className="text-cyan-500">•</span>
+                  <span className="text-cyan-400 dark:text-cyan-500">•</span>
                   <span>{t('landing.initiativeBadge') || 'Plateforme des jeunes talents tunisiens'}</span>
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12]">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-[-0.035em] text-slate-900 dark:text-white leading-[1.08]">
                   {t('landing.heroHeadline1') || 'Transforme ton idée'} <br />
                   <span className="bg-gradient-to-r from-cyan-500 via-teal-400 to-indigo-500 dark:from-cyan-400 dark:via-teal-300 dark:to-indigo-400 bg-clip-text text-transparent">
                     {t('landing.heroHeadline2') || 'en projet réel.'}
                   </span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
                   {t('landing.heroSubtitle') || 'Trouve les bonnes personnes pour cofonder ta startup ou rejoindre une équipe ambitieuse. Conçu pour les étudiants, diplômés et jeunes entrepreneurs tunisiens.'}
                 </p>
 
@@ -114,23 +114,24 @@ export function LandingClientView({ featuredProjects }: LandingClientViewProps) 
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
                   <Link
                     href="/signup"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 via-teal-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 rounded-2xl shadow-lg shadow-cyan-500/25 border border-cyan-400/40 transition transform active:scale-95 hover:-translate-y-0.5"
+                    className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 text-sm font-bold text-white bg-gradient-to-r from-cyan-500 via-teal-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 rounded-full shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/40 border border-cyan-300/40 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-[0.98] landing-shimmer"
                   >
-                    <Rocket className="h-4 w-4" />
+                    <Rocket className="h-4 w-4 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
                     <span>{t('landing.join') || 'Rejoindre Fekretna'}</span>
                   </Link>
                   <Link
                     href="/explore"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-slate-800 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white bg-white dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800/80 border border-slate-300 dark:border-slate-700/80 rounded-2xl shadow-xs transition"
+                    className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 text-sm font-semibold text-slate-800 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white bg-white/80 dark:bg-white/[0.04] hover:bg-slate-100/90 dark:hover:bg-white/[0.08] border border-slate-300/80 dark:border-white/15 rounded-full shadow-xs hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 active:scale-[0.98] backdrop-blur-md"
                   >
-                    <Search className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
+                    <Search className="h-4 w-4 text-cyan-600 dark:text-cyan-400 transition-transform duration-300 group-hover:scale-110" />
                     <span>{t('landing.exploreProjects') || 'Explorer les projets'}</span>
                   </Link>
                 </div>
 
                 {/* Sub-info */}
-                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
-                  {t('landing.freeForStudents') || '100% gratuit pour les étudiants et fondateurs • Déployé pour Sfax, Tunis et toutes les régions'}
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium flex items-center justify-center lg:justify-start gap-1.5">
+                  <ShieldCheck className="h-3.5 w-3.5 text-cyan-600 dark:text-cyan-400" />
+                  <span>{t('landing.freeForStudents') || '100% gratuit pour les étudiants et fondateurs • Déployé pour Sfax, Tunis et toutes les régions'}</span>
                 </p>
               </div>
 
@@ -314,10 +315,10 @@ export function LandingClientView({ featuredProjects }: LandingClientViewProps) 
                 </p>
                 <Link
                   href="/signup"
-                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-xl shadow-lg shadow-cyan-400/20 transition transform hover:-translate-y-0.5"
+                  className="group inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-7 py-3.5 text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-400 via-teal-300 to-cyan-300 hover:from-cyan-300 hover:to-teal-200 rounded-full shadow-lg shadow-cyan-400/25 hover:shadow-cyan-400/40 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-[0.98] landing-shimmer"
                 >
-                  {t('landing.createProfileCta') || 'Créer mon profil gratuitement'}
-                  <ArrowRight className="h-4 w-4 rtl-flip" />
+                  <span>{t('landing.createProfileCta') || 'Créer mon profil gratuitement'}</span>
+                  <ArrowRight className="h-4 w-4 rtl-flip transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
                 </Link>
               </div>
             </div>

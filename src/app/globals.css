@@ -402,3 +402,78 @@ html.light ::-webkit-scrollbar-thumb:hover {
   background: rgba(2, 132, 199, 0.7);
 }
 
+/* ==========================================================================
+   LANDING PAGE ONLY — REFINED & PERFORMANT MICRO-ANIMATIONS
+   ========================================================================== */
+@keyframes landing-float-1 {
+  0%, 100% { transform: translate(0px, 0px); }
+  50% { transform: translate(-3px, -8px); }
+}
+
+@keyframes landing-float-2 {
+  0%, 100% { transform: translate(0px, 0px); }
+  50% { transform: translate(4px, -6px); }
+}
+
+@keyframes landing-float-3 {
+  0%, 100% { transform: translate(0px, 0px); }
+  50% { transform: translate(-4px, 6px); }
+}
+
+@keyframes landing-float-4 {
+  0%, 100% { transform: translate(0px, 0px); }
+  50% { transform: translate(5px, 5px); }
+}
+
+@keyframes landing-pulse-halo {
+  0%, 100% { transform: scale(1); opacity: 0.25; }
+  50% { transform: scale(1.12); opacity: 0.55; }
+}
+
+@keyframes landing-spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes landing-shimmer-sweep {
+  0% { transform: translateX(-150%); }
+  100% { transform: translateX(250%); }
+}
+
+.landing-float-node-1 {
+  animation: landing-float-1 7s ease-in-out infinite;
+}
+.landing-float-node-2 {
+  animation: landing-float-2 8s ease-in-out infinite 0.7s;
+}
+.landing-float-node-3 {
+  animation: landing-float-3 7.5s ease-in-out infinite 1.4s;
+}
+.landing-float-node-4 {
+  animation: landing-float-4 8.5s ease-in-out infinite 2.1s;
+}
+.landing-pulse-halo {
+  animation: landing-pulse-halo 5s ease-in-out infinite;
+}
+.landing-orbit-slow {
+  transform-origin: center;
+  animation: landing-spin-slow 60s linear infinite;
+}
+.landing-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.landing-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transform: translateX(-150%);
+  animation: landing-shimmer-sweep 4.5s ease-in-out infinite 1s;
+  pointer-events: none;
+}
+
+

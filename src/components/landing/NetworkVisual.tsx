@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Sparkles, Cpu, Palette, Briefcase, TrendingUp, Lightbulb } from 'lucide-react';
+import { Cpu, Palette, Briefcase, TrendingUp, Lightbulb, Sparkles } from 'lucide-react';
 import { useI18n } from '@/lib/i18n/context';
 
 export function NetworkVisual() {
@@ -11,129 +11,140 @@ export function NetworkVisual() {
   const nodes = [
     {
       id: 'dev',
-      title: t('landing.networkDev'),
+      title: t('landing.networkDev') || 'Tech & IA',
+      role: 'Développeur / Data Scientist',
       icon: Cpu,
       color: '#06b6d4',
-      glow: 'rgba(6, 182, 212, 0.4)',
-      bg: 'bg-cyan-50 dark:bg-cyan-950/60',
-      border: 'border-cyan-300 dark:border-cyan-500/50',
-      text: 'text-cyan-800 dark:text-cyan-400',
-      iconBg: 'bg-cyan-100 dark:bg-slate-900',
-      x: 70,
-      y: 90,
-      tags: ['React', 'Python', 'AI/ML', 'Mobile'],
+      glow: 'rgba(6, 182, 212, 0.45)',
+      bg: 'bg-cyan-50/90 dark:bg-[#08182b]/90',
+      border: 'border-cyan-300 dark:border-cyan-500/40',
+      text: 'text-cyan-800 dark:text-cyan-300',
+      iconBg: 'bg-cyan-100 dark:bg-cyan-950/80',
+      floatClass: 'landing-float-node-1',
+      x: 75,
+      y: 85,
+      tags: ['React', 'Python', 'AI/ML', 'Next.js'],
     },
     {
       id: 'design',
-      title: t('landing.networkDesign'),
+      title: t('landing.networkDesign') || 'Design & UX',
+      role: 'Product Designer / UI-UX',
       icon: Palette,
       color: '#c084fc',
-      glow: 'rgba(192, 132, 252, 0.4)',
-      bg: 'bg-purple-50 dark:bg-purple-950/60',
-      border: 'border-purple-300 dark:border-purple-500/50',
-      text: 'text-purple-800 dark:text-purple-400',
-      iconBg: 'bg-purple-100 dark:bg-slate-900',
-      x: 350,
-      y: 80,
-      tags: ['UI/UX', 'Figma', 'Prototyping'],
+      glow: 'rgba(192, 132, 252, 0.45)',
+      bg: 'bg-purple-50/90 dark:bg-[#1a0f2e]/90',
+      border: 'border-purple-300 dark:border-purple-500/40',
+      text: 'text-purple-800 dark:text-purple-300',
+      iconBg: 'bg-purple-100 dark:bg-purple-950/80',
+      floatClass: 'landing-float-node-2',
+      x: 345,
+      y: 75,
+      tags: ['Figma', 'UI/UX', 'Design System', '3D'],
     },
     {
       id: 'business',
-      title: t('landing.networkBusiness'),
+      title: t('landing.networkBusiness') || 'Business & Stratégie',
+      role: 'Cofondateur / Business Dev',
       icon: Briefcase,
       color: '#10b981',
-      glow: 'rgba(16, 185, 129, 0.4)',
-      bg: 'bg-emerald-50 dark:bg-emerald-950/60',
-      border: 'border-emerald-300 dark:border-emerald-500/50',
-      text: 'text-emerald-800 dark:text-emerald-400',
-      iconBg: 'bg-emerald-100 dark:bg-slate-900',
-      x: 80,
-      y: 330,
-      tags: ['Stratégie', 'Finance', 'Pitch'],
+      glow: 'rgba(16, 185, 129, 0.45)',
+      bg: 'bg-emerald-50/90 dark:bg-[#061d17]/90',
+      border: 'border-emerald-300 dark:border-emerald-500/40',
+      text: 'text-emerald-800 dark:text-emerald-300',
+      iconBg: 'bg-emerald-100 dark:bg-emerald-950/80',
+      floatClass: 'landing-float-node-3',
+      x: 85,
+      y: 325,
+      tags: ['Finance', 'Business Plan', 'Pitch', 'Sales'],
     },
     {
       id: 'marketing',
-      title: t('landing.networkMarketing'),
+      title: t('landing.networkMarketing') || 'Growth & Marketing',
+      role: 'Growth Marketer / Acquisition',
       icon: TrendingUp,
       color: '#3b82f6',
-      glow: 'rgba(59, 130, 246, 0.4)',
-      bg: 'bg-blue-50 dark:bg-blue-950/60',
-      border: 'border-blue-300 dark:border-blue-500/50',
-      text: 'text-blue-800 dark:text-blue-400',
-      iconBg: 'bg-blue-100 dark:bg-slate-900',
-      x: 340,
-      y: 320,
-      tags: ['Growth', 'Acquisition', 'SEO'],
+      glow: 'rgba(59, 130, 246, 0.45)',
+      bg: 'bg-blue-50/90 dark:bg-[#09152e]/90',
+      border: 'border-blue-300 dark:border-blue-500/40',
+      text: 'text-blue-800 dark:text-blue-300',
+      iconBg: 'bg-blue-100 dark:bg-blue-950/80',
+      floatClass: 'landing-float-node-4',
+      x: 335,
+      y: 315,
+      tags: ['Acquisition', 'SEO', 'Content', 'Social Ads'],
     },
   ];
 
   const centerX = 210;
-  const centerY = 205;
+  const centerY = 200;
 
   return (
-    <div className="relative mx-auto w-full max-w-lg aspect-square select-none flex items-center justify-center p-4">
+    <div className="relative mx-auto w-full max-w-lg aspect-square select-none flex items-center justify-center p-3 sm:p-4">
       {/* Ambient background glow behind network */}
-      <div className="absolute inset-4 rounded-full bg-gradient-to-tr from-cyan-500/10 via-purple-500/10 to-blue-500/10 blur-3xl -z-10" />
+      <div className="absolute inset-2 sm:inset-6 rounded-full bg-gradient-to-tr from-cyan-500/10 via-indigo-500/10 to-teal-500/10 blur-3xl -z-10 pointer-events-none" />
 
-      {/* SVG Connecting Lines & Pulsing Signals */}
+      {/* SVG Connecting Lines, Orbit Rings & Animated Laser Pulses */}
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none"
-        viewBox="0 0 420 410"
+        viewBox="0 0 420 400"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <linearGradient id="lineGradCyan" x1="70" y1="90" x2="210" y2="205" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#06b6d4" stopOpacity="0.8" />
-            <stop offset="1" stopColor="#06b6d4" stopOpacity="0.2" />
-          </linearGradient>
-          <linearGradient id="lineGradPurple" x1="350" y1="80" x2="210" y2="205" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#c084fc" stopOpacity="0.8" />
-            <stop offset="1" stopColor="#c084fc" stopOpacity="0.2" />
-          </linearGradient>
-          <linearGradient id="lineGradEmerald" x1="80" y1="330" x2="210" y2="205" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#10b981" stopOpacity="0.8" />
-            <stop offset="1" stopColor="#10b981" stopOpacity="0.2" />
-          </linearGradient>
-          <linearGradient id="lineGradBlue" x1="340" y1="320" x2="210" y2="205" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#3b82f6" stopOpacity="0.8" />
-            <stop offset="1" stopColor="#3b82f6" stopOpacity="0.2" />
-          </linearGradient>
-
-          {/* Glowing filter */}
-          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="3" result="blur" />
+          <filter id="network-glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="3.5" result="blur" />
             <feComposite in="SourceGraphic" in2="blur" operator="over" />
           </filter>
         </defs>
 
-        {/* Orbit Rings */}
-        <circle cx={centerX} cy={centerY} r="135" stroke="rgba(148, 163, 184, 0.08)" strokeDasharray="4 6" />
-        <circle cx={centerX} cy={centerY} r="90" stroke="rgba(6, 182, 212, 0.12)" strokeDasharray="3 4" />
+        {/* Orbit Rings with subtle dash and rotation */}
+        <g className="landing-orbit-slow" style={{ transformOrigin: `${centerX}px ${centerY}px` }}>
+          <circle
+            cx={centerX}
+            cy={centerY}
+            r="138"
+            stroke="currentColor"
+            className="text-slate-300/40 dark:text-white/[0.05]"
+            strokeWidth="1"
+            strokeDasharray="4 8"
+          />
+          <circle
+            cx={centerX}
+            cy={centerY}
+            r="88"
+            stroke="currentColor"
+            className="text-cyan-500/25 dark:text-cyan-400/15"
+            strokeWidth="1"
+            strokeDasharray="3 6"
+          />
+        </g>
 
-        {/* Dynamic Connector lines */}
+        {/* Dynamic Connector lines & Laser signals */}
         {nodes.map((node) => {
-          const isActive = activeNode === node.id || activeNode === null;
+          const isActive = activeNode === node.id;
+          const isDimmed = activeNode !== null && !isActive;
+
           return (
-            <g key={node.id}>
+            <g key={node.id} className="transition-opacity duration-300" opacity={isDimmed ? 0.3 : 1}>
+              {/* Base connector line */}
               <line
                 x1={node.x}
                 y1={node.y}
                 x2={centerX}
                 y2={centerY}
                 stroke={node.color}
-                strokeOpacity={isActive ? 0.5 : 0.15}
-                strokeWidth={isActive ? 2 : 1}
-                strokeDasharray={activeNode === node.id ? 'none' : '4 4'}
-                filter={activeNode === node.id ? 'url(#glow)' : undefined}
+                strokeOpacity={isActive ? 0.85 : 0.25}
+                strokeWidth={isActive ? 2.5 : 1.2}
+                strokeDasharray={isActive ? 'none' : '4 4'}
+                filter={isActive ? 'url(#network-glow)' : undefined}
                 className="transition-all duration-300"
               />
 
-              {/* Animated Light Pulse traveling on line */}
-              <circle r="3" fill={node.color} opacity={isActive ? 0.9 : 0.4}>
+              {/* Laser Light Pulse traveling between central idea and satellite node */}
+              <circle r={isActive ? 3.5 : 2.5} fill={node.color} opacity={isActive ? 1 : 0.6}>
                 <animateMotion
-                  path={`M ${node.x} ${node.y} L ${centerX} ${centerY}`}
-                  dur={`${3 + (node.x % 3)}s`}
+                  path={`M ${centerX} ${centerY} L ${node.x} ${node.y}`}
+                  dur={`${2.6 + (node.x % 2)}s`}
                   repeatCount="indefinite"
                 />
               </circle>
@@ -142,58 +153,79 @@ export function NetworkVisual() {
         })}
       </svg>
 
-      {/* Central Node: IDEA */}
+      {/* Central Node: IDÉE / PROJECT CORE */}
       <div
-        className="absolute z-20 flex flex-col items-center justify-center p-4 rounded-3xl bg-white dark:bg-slate-900/90 border-2 border-cyan-500 dark:border-cyan-400 shadow-xl dark:shadow-2xl shadow-cyan-500/20 dark:shadow-cyan-500/40 backdrop-blur-xl transition-all duration-300 hover:scale-105"
-        style={{ left: `${centerX - 52}px`, top: `${centerY - 45}px`, width: '104px', height: '90px' }}
+        className="absolute z-20 flex flex-col items-center justify-center p-3 sm:p-4 rounded-3xl bg-white/95 dark:bg-[#070b16]/95 border-2 border-cyan-400 dark:border-cyan-400/80 shadow-xl dark:shadow-2xl shadow-cyan-500/25 dark:shadow-cyan-500/35 backdrop-blur-2xl transition-all duration-300 hover:scale-105 group cursor-default"
+        style={{
+          left: `${centerX - 54}px`,
+          top: `${centerY - 48}px`,
+          width: '108px',
+          height: '96px',
+        }}
       >
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 text-white font-black shadow-md shadow-cyan-500/30 mb-1 animate-pulse">
-          <Lightbulb className="h-5 w-5 fill-white text-white" />
+        {/* Soft Halo breathing pulse */}
+        <div className="absolute inset-0 rounded-3xl bg-cyan-400/20 dark:bg-cyan-500/30 blur-xl landing-pulse-halo -z-10" />
+
+        <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-tr from-cyan-500 via-teal-500 to-indigo-600 text-white font-black shadow-md shadow-cyan-500/30 mb-1.5 transition-transform duration-300 group-hover:scale-110">
+          <Lightbulb className="h-5 w-5 fill-white text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.7)]" />
         </div>
-        <span className="text-[11px] font-black tracking-widest text-cyan-800 dark:text-cyan-300 uppercase">
-          {t('landing.networkCentral')}
+        <span className="text-[10.5px] font-black tracking-wider text-slate-900 dark:text-cyan-200 uppercase text-center leading-none">
+          {t('landing.networkCentral') || 'IDÉE'}
+        </span>
+        <span className="text-[9px] font-semibold text-cyan-600 dark:text-cyan-400 mt-0.5 tracking-tight">
+          من فكرة لفريق
         </span>
       </div>
 
-      {/* Satellite Nodes */}
+      {/* Satellite Skill & Team Nodes */}
       {nodes.map((node) => {
         const Icon = node.icon;
         const isHovered = activeNode === node.id;
+        const isDimmed = activeNode !== null && !isHovered;
 
         return (
           <div
             key={node.id}
             onMouseEnter={() => setActiveNode(node.id)}
             onMouseLeave={() => setActiveNode(null)}
-            className={`absolute z-20 flex flex-col items-center p-2.5 rounded-2xl ${node.bg} ${node.border} border backdrop-blur-md shadow-sm dark:shadow-xl transition-all duration-300 cursor-pointer ${
-              isHovered ? 'scale-110 shadow-lg dark:shadow-2xl z-30' : 'hover:scale-105'
-            }`}
+            className={`absolute z-20 flex flex-col items-center p-2.5 sm:p-3 rounded-2xl ${node.bg} ${node.border} border backdrop-blur-xl shadow-md dark:shadow-xl transition-all duration-300 cursor-pointer ${
+              node.floatClass
+            } ${isHovered ? 'scale-110 z-30 ring-2 ring-cyan-400/40 shadow-xl' : isDimmed ? 'opacity-40 scale-95' : 'hover:scale-105'}`}
             style={{
-              left: `${node.x - 55}px`,
-              top: `${node.y - 35}px`,
-              width: '110px',
-              boxShadow: isHovered ? `0 0 25px ${node.glow}` : undefined,
+              left: `${node.x - 56}px`,
+              top: `${node.y - 36}px`,
+              width: '112px',
+              boxShadow: isHovered ? `0 0 30px ${node.glow}` : undefined,
             }}
           >
             <div
-              className={`flex h-8 w-8 items-center justify-center rounded-lg bg-white dark:bg-slate-900 border ${node.border} ${node.text} mb-1 shadow-xs`}
+              className={`flex h-8 w-8 items-center justify-center rounded-xl bg-white dark:bg-slate-900 border ${node.border} ${node.text} mb-1 shadow-xs transition-transform duration-300 ${
+                isHovered ? 'scale-110 rotate-6' : ''
+              }`}
             >
-              <Icon className="h-4 w-4" />
+              <Icon className="h-4 w-4 stroke-[2]" />
             </div>
-            <span className={`text-[10px] font-extrabold tracking-tight ${node.text} text-center leading-tight`}>
+
+            <span className={`text-[10.5px] font-extrabold tracking-tight ${node.text} text-center leading-tight`}>
               {node.title}
             </span>
 
-            {/* Hover preview pills */}
+            {/* Micro Tag Pills on Hover */}
             {isHovered && (
-              <div className="absolute -bottom-7 flex items-center gap-1 bg-white dark:bg-slate-950/90 border border-slate-300 dark:border-slate-700/80 px-2 py-0.5 rounded-full text-[9px] text-slate-800 dark:text-slate-300 shadow-md whitespace-nowrap animate-in fade-in duration-200">
-                <Sparkles className="h-2.5 w-2.5 text-cyan-600 dark:text-cyan-400" />
-                <span>{node.tags[0]}</span>
+              <div className="absolute -bottom-8 flex items-center gap-1 bg-white/95 dark:bg-[#070b16]/95 border border-slate-200 dark:border-white/15 px-2.5 py-1 rounded-full text-[9px] font-semibold text-slate-800 dark:text-slate-200 shadow-xl whitespace-nowrap animate-in fade-in slide-in-from-top-1 duration-200 z-40">
+                <Sparkles className="h-2.5 w-2.5 text-cyan-500 animate-pulse" />
+                <span>{node.tags.slice(0, 2).join(' • ')}</span>
               </div>
             )}
           </div>
         );
       })}
+
+      {/* Subtle Collaboration Indicator Badge at bottom */}
+      <div className="absolute bottom-1 sm:bottom-2 inset-x-0 mx-auto w-fit flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100/80 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-[10px] font-semibold text-slate-600 dark:text-slate-400 backdrop-blur-md">
+        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-ping" />
+        <span>Synergie active • Co-fondation & Équipe</span>
+      </div>
     </div>
   );
 }
